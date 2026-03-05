@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.6.0">
+  <diagram name="Страница-1" id="0HKPjH4TYOVdZMcn8J_i">
+    <mxGraphModel dx="786" dy="497" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-3" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Vy6IkjJI8cAOT3scBc7B-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Клиентское приложение&amp;nbsp; (Telegram)" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-7" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Vy6IkjJI8cAOT3scBc7B-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-9" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Vy6IkjJI8cAOT3scBc7B-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 13px; line-height: 22px; font-family: Menlo, Monaco, Consolas, &amp;quot;Cascadia Mono&amp;quot;, &amp;quot;Ubuntu Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;JetBrains Mono&amp;quot;, &amp;quot;Fira Code&amp;quot;, Cousine, &amp;quot;Roboto Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, Courier, sans-serif, system-ui; overflow: auto; text-wrap-mode: wrap; word-break: break-all; padding: 16px; color: rgb(15, 17, 21); text-align: start; margin: 0px !important;&quot;&gt;Telegram Bot Interface&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-variant-emoji: normal; font-stretch: normal; font-size: 13px; line-height: 22px; font-family: Menlo, Monaco, Consolas, &amp;quot;Cascadia Mono&amp;quot;, &amp;quot;Ubuntu Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Liberation Mono&amp;quot;, &amp;quot;JetBrains Mono&amp;quot;, &amp;quot;Fira Code&amp;quot;, Cousine, &amp;quot;Roboto Mono&amp;quot;, &amp;quot;Courier New&amp;quot;, Courier, sans-serif, system-ui; overflow: auto; text-wrap-mode: wrap; word-break: break-all; padding: 16px; color: rgb(15, 17, 21); text-align: start; margin: 0px !important;&quot;&gt;● Приём голосовых и текстовых сообщений                                    ● Отправка результатов пользователю                                           ● Валидация входящих данных  &lt;/pre&gt;" vertex="1">
+          <mxGeometry height="110" width="390" x="590" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-1" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="COYrOcuTFXmFemvBMOaa-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-3" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="COYrOcuTFXmFemvBMOaa-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-5" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="COYrOcuTFXmFemvBMOaa-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-8" edge="1" parent="1" source="Vy6IkjJI8cAOT3scBc7B-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="COYrOcuTFXmFemvBMOaa-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vy6IkjJI8cAOT3scBc7B-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Оркестратор&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="320" x="250" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-10" edge="1" parent="1" source="COYrOcuTFXmFemvBMOaa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="90" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-14" edge="1" parent="1" source="COYrOcuTFXmFemvBMOaa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="COYrOcuTFXmFemvBMOaa-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="STT сервис" vertex="1">
+          <mxGeometry height="60" width="120" x="30" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-11" edge="1" parent="1" source="COYrOcuTFXmFemvBMOaa-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="COYrOcuTFXmFemvBMOaa-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Сервис анализа тональности, намерений" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-12" edge="1" parent="1" source="COYrOcuTFXmFemvBMOaa-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="COYrOcuTFXmFemvBMOaa-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Сервис суммаризации" vertex="1">
+          <mxGeometry height="60" width="120" x="470" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-13" edge="1" parent="1" source="COYrOcuTFXmFemvBMOaa-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="COYrOcuTFXmFemvBMOaa-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Storage service" vertex="1">
+          <mxGeometry height="60" width="120" x="680" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="COYrOcuTFXmFemvBMOaa-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="База данных" vertex="1">
+          <mxGeometry height="100" width="650" x="90" y="990" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
