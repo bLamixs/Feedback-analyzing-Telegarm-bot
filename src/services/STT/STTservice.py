@@ -156,5 +156,5 @@ class STTService:
             return duration
         except Exception as e:
             raise RecognitionError(f"Failed to get audio duration: {e}") from e
-            return 0.0
+
 
