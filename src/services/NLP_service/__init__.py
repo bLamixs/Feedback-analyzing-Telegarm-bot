@@ -3,7 +3,7 @@ NLP анализ текста для "Кибер-секретаря".
 Включает анализ тональности, классификацию темы и определение намерения.
 """
 
-from .services import NLP_service
+from .NLP_service import NLPAnalysisService
 from .sentiment import SentimentAnalyzer
 from .topic import TopicClassifier
 from .intent import IntentDetector
@@ -17,7 +17,7 @@ from .exceptions import (
 )
 
 __all__ = [
-    'NLP_service',
+    'NLPAnalysisService',
     'SentimentAnalyzer',
     'TopicClassifier',
     'IntentDetector',
