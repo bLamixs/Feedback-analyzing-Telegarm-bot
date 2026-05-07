@@ -9,7 +9,7 @@ from typing import Optional, List
 from .database import get_session, init_db, close_db
 from .repositories import UserRepository, MessageRepository, AnalysisRepository, ErrorLogRepository
 from .exceptions import StorageError, UserNotFoundError
-from ..core.models import ProcessedMessage, UserContext
+from src.core.models import ProcessedMessage, UserContext
 
 
 class StorageService:
