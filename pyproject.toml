@@ -1,0 +1,109 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyber-secretary"
+version = "1.0.0"
+description = "Бот для умного анализа отзывов и обратной связи"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiogram>=3.0.0",
+    "whisper>=1.1.10",
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "sentence-transformers>=2.2.0",
+    "sumy>=0.11.0",
+    "pydantic>=2.0.0",
+    "sqlalchemy>=2.0.0",
+    "asyncpg>=0.29.0",
+    "aiohttp>=3.9.0",
+    "aiofiles>=23.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+# ============================================
+# Настройки Black (форматтер кода)
+# ============================================
+[tool.black]
+line-length = 120
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+# ============================================
+# Настройки Ruff (линтер) — заменяет flake8, isort, pylint [citation:2]
+# ============================================
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+# Выбираем правила: E=pycodestyle, F=pyflakes, I=isort, N=naming, W=pycodestyle warnings
+select = ["E", "F", "I", "N", "W", "B", "Q", "C4", "SIM", "PL"]
+
+ignore = [
+    "E501",  # line too long (обрабатывается black)
+    "W503",  # line break before binary operator
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]  # allow unused imports in __init__.py
+
+# ============================================
+# Настройки Mypy (статическая типизация)
+# ============================================
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = false
+disallow_untyped_defs = false  # не требуем аннотации для всех функций (можно включить позже)
+ignore_missing_imports = true
+exclude = [
+    "venv/",
+    ".venv/",
+    "build/",
+    "dist/",
+    "data/",
+    "migrations/",
+]
+
+# ============================================
+# Настройки Pytest (тестирование)
+# ============================================
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-v --strict-markers --tb=short"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+# Настройки покрытия
+[tool.coverage.run]
+source = ["src", "bot", "core", "services", "utils", "config"]
+omit = ["*/tests/*", "*/venv/*", "*/.venv/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]
+fail_under = 70  # минимальный процент покрытия
