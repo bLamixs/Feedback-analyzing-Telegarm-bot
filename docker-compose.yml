@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # Основной бот
+  bot:
+    build: .
+    container_name: cyber_secretary_bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DATABASE_URL=${DATABASE_URL:-postgresql+asyncpg://postgres:postgres@db:5432/cyber_secretary}
+      - ADMIN_ID=${ADMIN_ID}
+      - DEBUG=${DEBUG:-false}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - STT_MODEL=${STT_MODEL:-base}
+      - STT_LANGUAGE=${STT_LANGUAGE:-ru}
+      - STT_DEVICE=${STT_DEVICE:-auto}
+      - USE_GPU=${USE_GPU:-false}
+      - NLP_TOPICS=${NLP_TOPICS:-техническая поддержка,жалоба на сервис,предложение по улучшению,просто отзыв,спам}
+      - SUMMARIZER_ALGORITHM=${SUMMARIZER_ALGORITHM:-lsa}
+      - MAX_SUMMARY_SENTENCES=${MAX_SUMMARY_SENTENCES:-3}
+      - KEEP_AUDIO_FILES=${KEEP_AUDIO_FILES:-false}
+      - MAX_AUDIO_AGE_HOURS=${MAX_AUDIO_AGE_HOURS:-24}
+      - MAX_CONCURRENT_REQUESTS=${MAX_CONCURRENT_REQUESTS:-5}
+    volumes:
+      - ./data:/app/data          # для сохранения файлов и логов
+      - ./models_cache:/root/.cache   # кэш моделей (whisper, transformers)
+    depends_on:
+      - db
+    networks:
+      - secret_network
+
+  # База данных PostgreSQL (опционально, если используете SQLite – можно убрать)
+  db:
+    image: postgres:15-alpine
+    container_name: cyber_secretary_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cyber_secretary
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"   # только для локальной отладки, в продакшене уберите
+    networks:
+      - secret_network
+
+volumes:
+  postgres_data:
+
+networks:
+  secret_network:
+    driver: bridge
