@@ -6,13 +6,14 @@
 from aiogram import Router, types
 from aiogram.fsm.context import FSMContext
 
-from core import Orchestrator, UserContext
-from config.settings import settings
+from src.core import orchestrator
+from src.core.models import UserContext
+from src.config import settings
 
 router = Router(name="texts")
 
 # Инициализируем оркестратор (можно сделать синглтон)
-orchestrator = Orchestrator(config=settings.ORCHESTRATOR_CONFIG)
+orchestrator = orchestrator(config=settings.ORCHESTRATOR_CONFIG)
 
 
 @router.message(lambda message: message.text and not message.text.startswith('/'))

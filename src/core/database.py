@@ -3,7 +3,7 @@ from __future__ import annotations
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import declarative_base
 
-from config.settings import settings
+from src.config.settings import settings
 
 # Базовый класс для моделей
 Base = declarative_base()
