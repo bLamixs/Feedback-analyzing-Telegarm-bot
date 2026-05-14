@@ -1,3 +1,14 @@
+# tests/conftest.py
+
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Находим корень проекта (папка, где лежит main.py и .env)
+BASE_DIR = Path(__file__).parent.parent  # поднимаемся на уровень выше tests/
+env_path = BASE_DIR / ".env"
+
+# Загружаем .env с явным указанием пути
+load_dotenv(dotenv_path=env_path)
 import pytest
 import asyncio
 from unittest.mock import AsyncMock, patch
