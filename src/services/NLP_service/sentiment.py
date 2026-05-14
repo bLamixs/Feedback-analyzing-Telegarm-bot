@@ -5,7 +5,7 @@
 
 import time
 import logging
-from typing import Dict, Any
+from typing import Dict, Any, Optional, List
 
 import torch
 from transformers import pipeline

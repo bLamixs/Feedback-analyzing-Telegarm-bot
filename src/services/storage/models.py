@@ -7,8 +7,7 @@ from sqlalchemy import CheckConstraint, Index, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 
-# Исправьте путь на актуальный для вашего проекта
-from src.core.database import Base  # или from core.database import Base
+from ...core.database import Base
 
 
 class User(Base):
