@@ -13,12 +13,12 @@
 import time
 import logging
 from typing import Optional, Dict, Any, Union
-from datetime import datetime
 
-from src.services.STT import STTservice
-from src.services.NLP_service import NLP_service
+from src.services.STT import STTService
+from src.services.NLP_service import NLPAnalysisService
 from src.services.Summarisation_service import SummarizationService
 from src.services.storage import StorageService
+
 from .exceptions import ProcessingError, ServiceUnavailableError
 from .models import ProcessedMessage, UserContext
 
@@ -32,8 +32,8 @@ class Orchestrator:
 
     def __init__(
             self,
-            stt_service: Optional[STTservice] = None,
-            nlp_service: Optional[NLP_service] = None,
+            stt_service: Optional[STTService] = None,
+            nlp_service: Optional[NLPAnalysisService] = None,
             summarization_service: Optional[SummarizationService] = None,
             storage_service: Optional[StorageService] = None,
             config: Optional[Dict] = None
@@ -59,7 +59,7 @@ class Orchestrator:
 
         self.logger.info("Orchestrator initialized successfully")
 
-    def _init_stt(self) -> STTservice:
+    def _init_stt(self) -> STTService:
         """Инициализация STT сервиса с настройками по умолчанию"""
         try:
             return STTService(
@@ -71,10 +71,10 @@ class Orchestrator:
             self.logger.error(f"Failed to init STT: {e}")
             raise ServiceUnavailableError(f"STT service unavailable: {e}")
 
-    def _init_nlp(self) -> NLP_service:
+    def _init_nlp(self) -> NLPAnalysisService:
         """Инициализация NLP сервиса"""
         try:
-            return NLPService(
+            return NLPAnalysisService(
                 use_gpu=self.config.get("use_gpu", True),
                 custom_topics=self.config.get("topics", None)
             )
@@ -318,8 +318,7 @@ _{summary}_
             "orchestrator": "running",
             "stt": self.stt.get_model_info() if hasattr(self.stt, 'get_model_info') else "unknown",
             "nlp": self.nlp.get_service_info() if hasattr(self.nlp, 'get_service_info') else "unknown",
-            "summarizer": self.summarizer.get_service_info() if hasattr(self.summarizer,
-                                                                        'get_service_info') else "unknown",
+            "summarizer": self.summarizer.get_service_info() if hasattr(self.summarizer, 'get_service_info') else "unknown",
             "storage": "connected" if self.storage else "unknown"
         }
 
@@ -328,9 +327,7 @@ _{summary}_
         Проверка работоспособности всех сервисов.
         """
         try:
-            # Проверяем STT (быстрая транскрибация короткого теста)
-            test_text = "привет"
-            # Не вызываем реально, только проверяем что сервис инициализирован
+            # Проверяем STT
             if self.stt is None:
                 return False
 
@@ -341,7 +338,8 @@ _{summary}_
 
             # Проверяем суммаризатор
             test_summary = await self.summarizer.summarize_simple(
-                "тестовое сообщение для проверки работы сервиса суммаризации")
+                "тестовое сообщение для проверки работы сервиса суммаризации"
+            )
             if not test_summary:
                 return False
 

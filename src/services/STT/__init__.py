@@ -3,10 +3,12 @@ Speech-to-Text модуль для преобразования голосовы
 Использует OpenAI Whisper для распознавания русской речи.
 """
 
-from src.services.STT import STTservice
-from src.services.STT.exceptions import STTError, AudioConversionError, RecognitionError
+from .STTservice import STTService
+from .exceptions import STTError, AudioConversionError, RecognitionError
 
-__all__ = ['STTservice',
-           'STTError',
-           'AudioConversionError',
-           'RecognitionError']
+__all__ = [
+    'STTService',
+    'STTError',
+    'AudioConversionError',
+    'RecognitionError',
+]

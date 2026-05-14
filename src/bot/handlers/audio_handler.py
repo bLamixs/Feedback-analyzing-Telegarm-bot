@@ -4,19 +4,24 @@
 """
 
 import os
-import tempfile
 from aiogram import Router, types
 from aiogram.fsm.context import FSMContext
 
-from src.core import orchestrator
+from src.core import Orchestrator  # ← ИСПРАВЛЕНО: импортируем класс
 from src.core.models import UserContext
-from src.utils import tg_file_downloader
-from src.config.settings import settings
-
 from src.utils.tg_file_downloader import TelegramDownloader
+from src.config import settings
 
 router = Router(name="voices")
-orchestrator = orchestrator(config=settings.ORCHESTRATOR_CONFIG)
+
+# ПРАВИЛЬНОЕ создание оркестратора
+_orchestrator = Orchestrator(config=settings.orchestrator_config)  # ← строчные буквы!
+
+
+def set_orchestrator(orch):
+    """Устанавливает оркестратор (для тестов)."""
+    global _orchestrator
+    _orchestrator = orch
 
 
 @router.message(lambda message: message.voice is not None)
@@ -50,7 +55,7 @@ async def handle_voice(message: types.Message, state: FSMContext):
             audio_bytes = f.read()
 
         # Обрабатываем через оркестратор
-        response = await orchestrator.process_voice(
+        response = await _orchestrator.process_voice(  # ← _orchestrator с нижним подчёркиванием
             audio_bytes=audio_bytes,
             user_context=user_ctx,
             message_id=message.message_id,
