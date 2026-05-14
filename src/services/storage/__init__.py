@@ -2,7 +2,7 @@
 Storage Service — модуль для работы с базой данных.
 """
 
-from .service import StorageService
+from .storage_service import StorageService
 from .exceptions import StorageError, UserNotFoundError, MessageNotFoundError
 from .database import init_db, close_db
 

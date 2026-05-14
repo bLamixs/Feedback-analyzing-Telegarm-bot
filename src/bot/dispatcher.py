@@ -6,7 +6,7 @@
 from aiogram import Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from bot.handlers import commands, text_handler, voice_handler, admin
+from src.bot.handlers import commands, text_handler, audio_handler
 
 
 def setup_dispatcher() -> Dispatcher:
@@ -16,6 +16,6 @@ def setup_dispatcher() -> Dispatcher:
     # Регистрируем роутеры (именно такой порядок)
     dp.include_router(commands.router)      # /start, /help, /info
     dp.include_router(text_handler.router)  # обычные текстовые сообщения
-    dp.include_router(voice_handler.router) # голосовые сообщения
+    dp.include_router(audio_handler.router) # голосовые сообщения
 
     return dp

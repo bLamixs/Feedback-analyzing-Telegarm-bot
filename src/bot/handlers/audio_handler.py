@@ -8,12 +8,15 @@ import tempfile
 from aiogram import Router, types
 from aiogram.fsm.context import FSMContext
 
-from core import orchestrator, UserContext
-from utils import tg_file_downloader
-from config.settings import settings
+from src.core import orchestrator
+from src.core.models import UserContext
+from src.utils import tg_file_downloader
+from src.config.settings import settings
+
+from src.utils.tg_file_downloader import TelegramDownloader
 
 router = Router(name="voices")
-orchestrator = Orchestrator(config=settings.ORCHESTRATOR_CONFIG)
+orchestrator = orchestrator(config=settings.ORCHESTRATOR_CONFIG)
 
 
 @router.message(lambda message: message.voice is not None)

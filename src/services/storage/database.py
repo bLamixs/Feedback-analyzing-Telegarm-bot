@@ -12,7 +12,7 @@ from sqlalchemy.ext.asyncio import (
 )
 from sqlalchemy.orm import declarative_base
 
-from config import settings
+from src.config import settings
 
 # Базовый класс для моделей
 Base = declarative_base()

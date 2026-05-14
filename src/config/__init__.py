@@ -2,7 +2,7 @@
 Пакет конфигурации: настройки и логгер.
 """
 
-from .settings import settings
-from .logger import setup_logging, get_logger
+from src.config.settings import settings
+from src.config.logger_config import setup_logging, get_logger
 
 __all__ = ["settings", "setup_logging", "get_logger"]
