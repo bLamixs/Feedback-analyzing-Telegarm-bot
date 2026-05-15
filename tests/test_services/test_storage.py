@@ -1,6 +1,6 @@
 import pytest
-from services.storage import StorageService
-from core.models import ProcessedMessage, UserContext
+from src.services.storage import StorageService
+from src.core.models import ProcessedMessage, UserContext
 
 
 @pytest.mark.asyncio
@@ -8,8 +8,8 @@ async def test_save_and_get_message():
     # Используем SQLite in-memory для тестов
     storage = StorageService()
     # Переопределяем URL БД для теста (можно через monkeypatch)
-    import services.storage.database
-    services.storage.database.settings.DATABASE_URL = "sqlite+aiosqlite:///:memory:"
+    import src.services.storage.database
+    src.services.storage.database.settings.DATABASE_URL = "sqlite+aiosqlite:///:memory:"
     await storage.initialize()
 
     user_ctx = UserContext(user_id=123, chat_id=123, username="tester")
